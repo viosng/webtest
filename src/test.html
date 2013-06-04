@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+</head>
+<script>
+    function t() {
+        var q = new Array()
+        var res = new Array();
+        q[0] = document.body;
+        var index = 0;
+        var length = 1;
+        var child, newChildHTML, n;
+        var tags = new Array("button", "a", "embed", "object", "input", "select", "video", "audio");
+        while(index < length){
+            node = q[index++];
+            for(var i = 0; i < node.childNodes.length; i++) {
+                child = node.childNodes[i];
+                var name = child.tagName.toLowerCase();
+                var exit = false;
+                if(name == "iframe" || name == "form") continue;
+                for (var j = 0; j < tags.length; j++) {
+                    if (tags[j].match(name)) {
+                        res.push(name);
+                        alert(1);
+                        exit = true;
+                        break;
+                    }
+                }
+                if(!exit && child.childElementCount > 0){
+                    q[length++] = child;
+                }
+            }
+        }
+        return res;
+    }
+    function g(){
+        var code = document.body.innerHTML;
+        var tags = ["p", "b", "tt", "h1", "h2", "h3", "h4", "h5", "h6", "strong", "strike", "s", "pre", "nobr", "sub", "sup"
+            , "em", "u"];
+        for(var i = 0; i < tags.length; i++) {
+            var tag = tags[i];
+            code = code.replace(new RegExp("<" + tag + "(?:\\s|.)*?>((?:\\s|.)*?)</" + tag + ">", "gmi"), "\n$1");
+        }
+        alert(code);
+        document.body.innerHTML = code;
+        var q = new Array()
+        q[0] = document.body;
+        var index = 0;
+        var length = 1;
+        var child, newChildHTML, n;
+        while(index < length){
+            node = q[index++];
+            for(var i=0; i < node.childNodes.length; i++) {
+                child = node.childNodes[i];
+                if(child.childElementCount > 0){
+                    q[length++] = child;
+                } else if(child.textContent != ""){
+                    if(child.innerHTML == null){
+                        n = document.createElement("i");
+                        n.textContent = child.textContent;
+                        node.replaceChild(n, child)
+                    } else {
+                        if(child.tagName.toLowerCase() != "li")
+                        child.innerHTML = "<i>" + child.textContent + "</i>";
+                    }
+                }
+            }
+        }
+
+    }
+</script>
+<body> 11111111111111111111111
+<p>ffdf</p>eeeeeeeee<input value="text1"/>
+<p><p left="1">333</p> dfgsdf <p>sdfgd</p> <s>dg<p>eee</p></s>sdfg
+<u> 444
+    <strong>
+        555555
+    </strong>
+    65656<b>7777</b>
+</u>
+
+</p>
+<button onclick="g()">111</button>
+<blockquote>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+        sed diem nonummy nibh euismod tincidunt ut lacreet dolore magna aliguam erat
+        volutpat. Ut wisis enim ad minim veniam, quis nostrud exerci tution ullamcorper
+        suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+</blockquote>sdfasdfgasf
+</body>
+</html>

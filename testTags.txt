@@ -1,0 +1,8 @@
+button
+a
+embed
+object
+input
+select
+video
+audio

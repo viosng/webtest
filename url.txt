@@ -1,0 +1,13 @@
+file:///C:\\Users\\VIO\\IdeaProjects\\TestCommands\\src\\test.html
+http://www.icq.com/join/ru
+http://xpoint.ru/forums/development/analysis/thread/35189.xhtml
+http://auto.yandex.ru/
+http://realty.yandex.ru/
+http://market.yandex.ru/catalogmodels.xml?CAT_ID=160043&hid=91491
+http://market.yandex.ru/guru.xml?CMD=-RR=9,0,0,0-VIS=70-CAT_ID=160043-EXC=1-PG=10&hid=91491
+http://www.math-pr.com/equations_1.php
+http://auto2.yandex.ru/
+http://www.yandex.ru/
+http://www.gmail.com/
+http://htmlbook.ru/
+http://www.pvpwar.net/office_high/auth/login
